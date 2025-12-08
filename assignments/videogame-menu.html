@@ -27,6 +27,24 @@
                     <li><a href="../about.html" class="nav-link">About Me</a></li>
                     <li><a href="../assignments.html" class="nav-link active" aria-current="page">Assignments</a></li>
                     <li><a href="../reflection.html" class="nav-link">Reflection</a></li>
+                    <li>
+                        <button class="theme-toggle" aria-label="Switch to dark mode">
+                            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                            </svg>
+                            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -65,33 +83,31 @@
                     </p>
 
                     <h2>The Project</h2>
-                    <div class="media-placeholder">
-                        <p>Add your Videogame Menu design here</p>
-                        <p><small>Include mockups, wireframes, or interactive prototypes</small></p>
+                    <div class="image-gallery">
+                        <div class="gallery-item">
+                            <img src="../assets/images/1.png" alt="Front cover of a journal with the name Gustave written on it, serving as the game's main menu" tabindex="0">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../assets/images/2.png" alt="Bestiary entry page for the Eveque monster, featuring a photo, description, and list of weaknesses" tabindex="0">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../assets/images/3.png" alt="Bestiary entry page for the Serpenphare monster, featuring a photo, description, and list of weaknesses" tabindex="0">
+                        </div>
                     </div>
+                    <p style="text-align: center; color: var(--color-text-muted); margin-top: 0.5rem;"><small>Click an image to view full size</small></p>
 
-                    <h2>Rhetorical Analysis</h2>
-                    <p>
-                        [Discuss the rhetorical choices you made in this assignment. Consider:]
-                    </p>
-                    <ul>
-                        <li>How did you create visual hierarchy to guide users?</li>
-                        <li>What color, typography, and iconography choices did you make?</li>
-                        <li>How did you balance aesthetics with usability?</li>
-                        <li>What conventions from existing games did you follow or subvert?</li>
-                    </ul>
+                    <!-- Lightbox Modal -->
+                    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+                        <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+                        <img class="lightbox-img" id="lightbox-img" src="" alt="">
+                    </div>
 
                     <div class="essay-excerpt">
-                        <h3>Excerpt from Accompanying Essay</h3>
+                        <h3>From the Essay</h3>
                         <p>
-                            [Include a relevant excerpt from your essay that discusses your rhetorical choices, creative process, or analysis of this assignment.]
+                            The monsters and, by extension, The Paintress herself, are not impervious, and the inhabitants of Lumière are not simply cattle for the slaughter.
                         </p>
                     </div>
-
-                    <h2>Reflection</h2>
-                    <p>
-                        [Reflect on what you learned from designing a game interface. How did thinking about user experience change your approach to design? What insights did you gain about visual communication?]
-                    </p>
                 </div>
 
                 <!-- Assignment Navigation -->

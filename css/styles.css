@@ -66,6 +66,43 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --color-primary: #60a5fa;
+    --color-primary-dark: #93c5fd;
+    --color-primary-light: #1e3a5f;
+
+    --color-accent: #a78bfa;
+    --color-accent-dark: #c4b5fd;
+    --color-accent-light: #2e1f4d;
+
+    --color-text: #f3f4f6;
+    --color-text-light: #d1d5db;
+    --color-text-muted: #9ca3af;
+    --color-bg: #111827;
+    --color-bg-alt: #1f2937;
+    --color-bg-accent: #374151;
+    --color-border: #374151;
+    --color-border-dark: #4b5563;
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .site-footer {
+    background: #0a0f1a;
+}
+
+[data-theme="dark"] .hero,
+[data-theme="dark"] .page-header {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-accent-light) 100%);
+}
+
+[data-theme="dark"] .assignment-header {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-bg) 100%);
+}
+
 /* ============================================
    Reset & Base Styles
    ============================================ */
@@ -273,6 +310,47 @@ a:focus {
     display: flex;
     gap: var(--space-xl);
     list-style: none;
+    align-items: center;
+}
+
+/* Dark Mode Toggle Button */
+.theme-toggle {
+    background: none;
+    border: 2px solid var(--color-border-dark);
+    border-radius: var(--radius-md);
+    padding: var(--space-sm);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    transition: all var(--transition-fast);
+}
+
+.theme-toggle:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
+.theme-toggle .sun-icon {
+    display: none;
+}
+
+.theme-toggle .moon-icon {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    display: none;
 }
 
 .nav-link {
@@ -877,6 +955,93 @@ a:focus {
     padding-top: var(--space-lg);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin: 0;
+}
+
+/* ============================================
+   Image Gallery & Lightbox
+   ============================================ */
+.image-gallery {
+    display: flex;
+    gap: var(--space-md);
+    overflow-x: auto;
+    padding: var(--space-sm) 0;
+    scroll-snap-type: x mandatory;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    width: 280px;
+    scroll-snap-align: start;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.gallery-item img:hover,
+.gallery-item img:focus {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Lightbox */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-lg);
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: var(--space-lg);
+    right: var(--space-lg);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: var(--space-sm);
+    transition: transform var(--transition-fast);
+}
+
+.lightbox-close:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .gallery-item {
+        width: 240px;
+    }
+
+    .gallery-item img {
+        height: 160px;
+    }
 }
 
 /* ============================================
