@@ -935,7 +935,7 @@ a:focus {
 }
 
 .footer-course {
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
 }
 
@@ -949,18 +949,18 @@ a:focus {
 .footer-nav a {
     color: var(--color-bg);
     text-decoration: none;
-    opacity: 0.8;
-    transition: opacity var(--transition-fast);
+    opacity: 1;
+    transition: all var(--transition-fast);
 }
 
 .footer-nav a:hover {
-    opacity: 1;
-    color: var(--color-bg);
+    color: var(--color-primary-light);
+    text-decoration: underline;
 }
 
 .copyright {
     text-align: center;
-    color: var(--color-text-muted);
+    color: rgba(255, 255, 255, 0.6);
     font-size: 0.875rem;
     padding-top: var(--space-lg);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
